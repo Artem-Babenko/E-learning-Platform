@@ -1,0 +1,7 @@
+{
+  "Server": "localhost\\sqlexpress",
+  "Database": "ElearnPlatform",
+  "Trusted_Connection": "True",
+  "MultipleActiveResultSets": "True",
+  "Encrypt": "False"
+}
