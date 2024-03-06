@@ -1,6 +1,7 @@
 ﻿
 namespace BLL.Services;
 
-public class CourseService
+public class CourseService : ICourseService
 {
+
 }

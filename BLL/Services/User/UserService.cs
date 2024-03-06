@@ -11,7 +11,6 @@ namespace BLL.Services;
 public class UserService : IUserService
 {
     private readonly IMapper mapper;
-    private readonly ILogger<UserService> logger;
     private readonly IUnitOfWork unitOfWork;
     private readonly IRepository<User> userRepository;
 
@@ -19,9 +18,7 @@ public class UserService : IUserService
     {
         mapper = AutoMapper.Mapper;
         unitOfWork = new UnitOfWork();
-        this.logger = logger;
         userRepository = unitOfWork.GetRepository<User>();
-        logger.LogInformation("UserService: Створення сервісу.");
     }
 
     // Отримання інформації про користувача.
@@ -31,16 +28,7 @@ public class UserService : IUserService
                     .Include(user => user.Role)
                     .FirstOrDefaultAsync(user => user.Id == id);
 
-        if(user == null)
-        {
-            logger.LogWarning("UserService: Не отримано дані користувача.");
-            return null;
-        }
-        else
-        {
-            logger.LogInformation("UserService: Успішне отримання інформації прокористувача з репозиторію.");
-            return mapper.Map<UserDTO>(user);
-        }
+        return user != null ? mapper.Map<UserDTO>(user) : null;
     }
 
     // Отримання списку користувачів.
@@ -50,7 +38,6 @@ public class UserService : IUserService
                     .Include(user => user.Role)
                     .ToListAsync();
 
-        logger.LogInformation("UserService: Успішне отримання списку користувачів з репозиторію.");
         return mapper.Map<List<UserDTO>>(users);
     }
 
@@ -58,6 +45,5 @@ public class UserService : IUserService
     public void Dispose()
     {
         unitOfWork.Dispose();
-        logger.LogInformation("UserService: Утилізація сервісу та одиниці роботи.");
     }
 }

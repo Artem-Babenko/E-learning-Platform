@@ -1,12 +1,9 @@
-﻿using BLL.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BLL.Attributes;
+using BLL.DTO;
 
 namespace BLL.Services;
 
+[InterfaceForDI]
 public interface IUserService : IDisposable
 {
     public Task<IEnumerable<UserDTO>> GetUsersList();
