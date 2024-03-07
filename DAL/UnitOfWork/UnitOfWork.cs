@@ -1,5 +1,6 @@
 ﻿
 using DAL.Repository;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace DAL.UnitOfWork;
 
@@ -9,6 +10,7 @@ public class UnitOfWork : IUnitOfWork
 {
     private readonly DatabaseContext db;
     private Dictionary<Type, object> repositories;
+    private IDbContextTransaction? transaction;
 
     /// <summary> Конструктор одиниці роботи. </summary>
     public UnitOfWork()
@@ -17,22 +19,35 @@ public class UnitOfWork : IUnitOfWork
         repositories = new Dictionary<Type, object>();
     }
 
-    /// <summary> Збеження змін у базу даних. </summary>
-    public void Commit()
+    /// <summary> Збереження змін у базі даних. </summary>
+    public void Save()
     {
         db.SaveChanges();
     }
 
-    /// <summary> Асинхронне збеження змін у базу даних. </summary>
-    public async Task CommitAsync()
+    /// <summary> Асинхронне збереження змін у базі даних. </summary>
+    public async Task SaveAsync()
     {
         await db.SaveChangesAsync();
     }
 
-    /// <summary> Відміна змін у базі даних. </summary>
+    /// <summary> Створення транзакції змін у базі даних. </summary>
+    public void CreateTransaction()
+    {
+        transaction = db.Database.BeginTransaction();
+    }
+
+    /// <summary> Застосування транзакції до бази даних. </summary>
+    public void Commit()
+    {
+        transaction?.Commit();
+    }
+
+    /// <summary> Відміна транзакції у базі даних. </summary>
     public void Rollback()
     {
-        db.Database.RollbackTransaction();
+        transaction?.Rollback();
+        transaction?.Dispose();
     }
 
     /// <summary> Отримання репозиторію сутностей. </summary>

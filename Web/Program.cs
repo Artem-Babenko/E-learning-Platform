@@ -41,6 +41,7 @@ var app = builder.Build();
 
 app.UseStaticFiles(); 
 app.MapControllers();
+app.UseRouting();
 
 app.UseSerilogRequestLogging();
 app.UseResponseCompression();

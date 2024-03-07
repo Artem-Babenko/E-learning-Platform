@@ -54,6 +54,13 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, I
         return false;
     }
 
+    /// <summary> Видалення сутності. </summary>
+    public bool Remove(TEntity entity)
+    {
+        entities.Remove(entity);
+        return true;
+    }
+
     /// <summary> Асинхронне видалення сутності за ідентифікатором. </summary>
     public async Task<bool> RemoveAsync(int id)
     {
@@ -76,6 +83,7 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, I
     public void Update(in TEntity entity)
     {
         entities.Add(entity).State = EntityState.Modified;
+        //entities.Update(entity);
     }
 
     /// <summary> Збереження репозиторію. </summary>

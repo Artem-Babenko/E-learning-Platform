@@ -3,7 +3,7 @@ using DAL.Entities;
 
 namespace DAL.Repository;
 
-/// <summary> Репозиторій сутностей. Абстракція на контекст бази даних. </summary>
+/// <summary> Інтерфейс репозиторію сутностей. Абстракція на контекст бази даних. </summary>
 public interface IRepository<TEntity> : IDisposable where TEntity : class, IEntity
 {
     /// <summary> Отримання списку сутностей. </summary>
@@ -17,6 +17,9 @@ public interface IRepository<TEntity> : IDisposable where TEntity : class, IEnti
 
     /// <summary> Видалення сутності за ідентифікатором. </summary>
     bool Remove(int id);
+
+    /// <summary> Видалення сутності. </summary>
+    bool Remove(TEntity entity);
 
     /// <summary> Асинхронне видалення сутності за ідентифікатором. </summary>
     Task<bool> RemoveAsync(int id);
