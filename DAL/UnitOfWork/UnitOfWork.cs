@@ -11,6 +11,7 @@ public class UnitOfWork : IUnitOfWork
     private readonly DatabaseContext db;
     private Dictionary<Type, object> repositories;
     private IDbContextTransaction? transaction;
+    private bool _disposed = false;
 
     /// <summary> Конструктор одиниці роботи. </summary>
     public UnitOfWork()
@@ -62,10 +63,6 @@ public class UnitOfWork : IUnitOfWork
         return repository;
     }
 
-    #region Dispose
-
-    private bool _disposed = false;
-
     protected virtual void Dispose(bool disposing)
     {
         if (!_disposed)
@@ -83,6 +80,4 @@ public class UnitOfWork : IUnitOfWork
         Dispose(true);
         GC.SuppressFinalize(this);
     }
-
-    #endregion
 }
