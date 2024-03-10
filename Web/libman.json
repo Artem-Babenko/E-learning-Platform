@@ -6,5 +6,17 @@
       "library": "jquery@3.7.1",
       "destination": "wwwroot/lib/jquery/"
     }
-  ]
+  ,
+{
+  "provider": "cdnjs",
+  "library": "js-cookie@3.0.5",
+  "destination": "wwwroot/lib/js-cookie/"
+}
+,
+{
+  "provider": "cdnjs",
+  "library": "font-awesome@6.5.1",
+  "destination": "wwwroot/lib/font-awesome/"
+}
+]
 }
