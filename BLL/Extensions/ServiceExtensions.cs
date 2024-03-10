@@ -14,7 +14,7 @@ public static class ServiceExtensions
     {
         var assembly = Assembly.GetExecutingAssembly();
         var serviceInterfases = assembly.GetTypes()
-            .Where(type => type.GetCustomAttribute<InterfaceForDIAttribute>() != null)
+            .Where(type => type.GetCustomAttribute<InterfaceForDI>() != null)
             .ToArray();
 
         foreach(var serviceInterfase in serviceInterfases)

@@ -100,4 +100,13 @@
   <data name="NAME" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="UA" xml:space="preserve">
+    <value>Ukrainian</value>
+  </data>
+  <data name="RU" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="ENG" xml:space="preserve">
+    <value>English</value>
+  </data>
 </root>
