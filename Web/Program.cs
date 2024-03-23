@@ -7,10 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Логування Serilog.
 builder.Services.AddLogging();
 builder.Logging.ClearProviders();
-builder.Host.UseSerilog((context, configuration) =>
-{
-    configuration.ReadFrom.Configuration(context.Configuration); //!!! Налаштувати логування
-});
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.File(
+        path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs", "log-.txt"),
+        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{NewLine}{Exception}",
+        rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+builder.Host.UseSerilog();
 
 // Контроллери з представленнями.
 builder.Services.AddControllersWithViews();
