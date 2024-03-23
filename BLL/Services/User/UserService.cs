@@ -4,7 +4,6 @@ using DAL.Entities;
 using DAL.Repository;
 using DAL.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace BLL.Services;
 
@@ -14,10 +13,10 @@ public class UserService : IUserService
     private readonly IUnitOfWork unitOfWork;
     private readonly IRepository<User> userRepository;
 
-    public UserService(ILogger<UserService> logger)
+    public UserService(IUnitOfWork unitOfWork)
     {
         mapper = AutoMapper.Mapper;
-        unitOfWork = new UnitOfWork();
+        this.unitOfWork = unitOfWork;
         userRepository = unitOfWork.GetRepository<User>();
     }
 

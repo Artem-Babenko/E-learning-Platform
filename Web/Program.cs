@@ -1,6 +1,6 @@
 using Serilog;
 using Microsoft.AspNetCore.ResponseCompression;
-using Infrastructure.Extensions;
+using BLL.IoCResolver;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,8 +37,8 @@ builder.Services.AddResponseCompression(options =>
     options.Providers.Add<BrotliCompressionProvider>();
 });
 
-// Сервіси шару бізнес логіки.
 builder.Services.AddBLLScopedServices();
+builder.Services.AddUnitOfWork();
 
 var app = builder.Build();
 

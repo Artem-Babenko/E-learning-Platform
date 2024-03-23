@@ -1,8 +1,8 @@
-﻿using Infrastructure.Attributes;
+﻿using DAL.UnitOfWork;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Infrastructure.Extensions;
+namespace BLL.IoCResolver;
 
 public static class ServiceExtensions
 {
@@ -32,5 +32,13 @@ public static class ServiceExtensions
         }
 
         return serviceCollection;
+    }
+
+    /// <summary>
+    /// Додавання одиниці роботи у контейнер впровадження залежностей.
+    /// </summary>
+    public static void AddUnitOfWork(this IServiceCollection services)
+    {
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
 }

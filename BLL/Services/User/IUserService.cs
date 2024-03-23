@@ -1,5 +1,5 @@
-﻿using Infrastructure.Attributes;
-using BLL.DTO;
+﻿using BLL.DTO;
+using BLL.IoCResolver;
 
 namespace BLL.Services;
 

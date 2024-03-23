@@ -1,4 +1,4 @@
-﻿using Infrastructure.Attributes;
+﻿using BLL.IoCResolver;
 
 namespace BLL.Services;
 
