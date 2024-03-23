@@ -1,4 +1,4 @@
-﻿using BLL.Attributes;
+﻿using Infrastructure.Attributes;
 using BLL.DTO;
 
 namespace BLL.Services;

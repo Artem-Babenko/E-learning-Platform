@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Translate {
+namespace Infrastructure.Translate {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Translate {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Translate.TranslateResources", typeof(TranslateResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Infrastructure.Translate.TranslateResources", typeof(TranslateResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -1,6 +1,6 @@
-﻿
-using DAL.Repository;
+﻿using DAL.Repository;
 using DAL.Entities;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace DAL.UnitOfWork;
 
@@ -8,14 +8,8 @@ namespace DAL.UnitOfWork;
 /// Містить у собі репозиторії сутностей. </summary>
 public interface IUnitOfWork : IDisposable
 {
-    /// <summary> Створення транзакції змін у базі даних. </summary>
-    void CreateTransaction();
-
-    /// <summary> Застосування транзакції до бази даних. </summary>
-    void Commit();
-
-    /// <summary> Відміна транзакції у базі даних. </summary>
-    void Rollback();
+    /// <summary> Отриманння транзакції змін у базі даних. </summary>
+    IDbContextTransaction BeginTransaction();
 
     /// <summary> Збеження змін у базу даних. </summary>
     void Save();

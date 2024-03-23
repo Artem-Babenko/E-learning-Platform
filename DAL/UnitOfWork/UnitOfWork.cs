@@ -10,7 +10,6 @@ public class UnitOfWork : IUnitOfWork
 {
     private readonly DatabaseContext db;
     private Dictionary<Type, object> repositories;
-    private IDbContextTransaction? transaction;
     private bool _disposed = false;
 
     /// <summary> Конструктор одиниці роботи. </summary>
@@ -33,22 +32,9 @@ public class UnitOfWork : IUnitOfWork
     }
 
     /// <summary> Створення транзакції змін у базі даних. </summary>
-    public void CreateTransaction()
+    public IDbContextTransaction BeginTransaction()
     {
-        transaction = db.Database.BeginTransaction();
-    }
-
-    /// <summary> Застосування транзакції до бази даних. </summary>
-    public void Commit()
-    {
-        transaction?.Commit();
-    }
-
-    /// <summary> Відміна транзакції у базі даних. </summary>
-    public void Rollback()
-    {
-        transaction?.Rollback();
-        transaction?.Dispose();
+        return db.Database.BeginTransaction();
     }
 
     /// <summary> Отримання репозиторію сутностей. </summary>

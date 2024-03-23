@@ -1,5 +1,4 @@
-﻿
-namespace DAL.Entities;
+﻿namespace DAL.Entities;
 
 /// <summary> Сутність для роботи з базою даних. </summary>
 public interface IEntity 

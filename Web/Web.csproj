@@ -46,7 +46,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj" />
-    <ProjectReference Include="..\Translate\Translate.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,7 +1,4 @@
-﻿
-using System.Linq.Expressions;
-
-namespace BLL.Attributes;
+﻿namespace Infrastructure.Attributes;
 
 /// <summary> Представляє опис властивості або поля. 
 /// Призначений для відображення перекладу. </summary>

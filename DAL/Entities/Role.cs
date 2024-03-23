@@ -1,5 +1,4 @@
-﻿
-namespace DAL.Entities;
+﻿namespace DAL.Entities;
  
 /// <summary> Роль користувача у цій системі, для авторизації. </summary>
 public class Role : IEntity

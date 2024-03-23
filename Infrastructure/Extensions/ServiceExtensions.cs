@@ -1,9 +1,8 @@
-﻿
-using BLL.Attributes;
+﻿using Infrastructure.Attributes;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace BLL.Extensions;
+namespace Infrastructure.Extensions;
 
 public static class ServiceExtensions
 {

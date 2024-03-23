@@ -1,8 +1,8 @@
-﻿using Translate;
-using BLL.Attributes;
+﻿using Infrastructure.Attributes;
+using Infrastructure.Translate;
 using System.Reflection;
 
-namespace BLL.Extensions;
+namespace Infrastructure.Extensions;
 
 /// <summary> Розширення на атрибути. </summary>
 public static class AttrExtensions

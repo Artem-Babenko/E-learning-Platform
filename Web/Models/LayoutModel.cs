@@ -1,5 +1,5 @@
-﻿
-using BLL.Enums;
+﻿using Infrastructure.Enums;
+
 namespace Web.Models;
 
 /// <summary> Модель макету сторінки. Містить у собі властивості, 

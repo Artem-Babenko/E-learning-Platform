@@ -1,5 +1,4 @@
-﻿
-namespace DAL.Entities;
+﻿namespace DAL.Entities;
 
 /// <summary> Навчальний курс. Збірка матеріалів для навчання. </summary>
 public class Course : IEntity

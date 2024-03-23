@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BLL.DTO;
 using DAL.Entities;
+
 namespace BLL;
 
 /// <summary> Профіль конвертації EF сутностей та DTO класів. </summary>

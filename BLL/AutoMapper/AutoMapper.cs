@@ -1,5 +1,4 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 
 namespace BLL;
 
@@ -10,12 +9,9 @@ internal static class AutoMapper
     {
         var config = new MapperConfiguration(cfg =>
         {
-            // Налаштування відображення властивостей об'єктів.
             cfg.ShouldMapProperty = p => p.GetMethod!.IsPublic || p.GetMethod.IsAssembly;
-            // Додавання профілю мапера.
             cfg.AddProfile<EntityProfile>();
         });
-        // Створення екземпляра мапера за конфігурацією.
         var mapper = config.CreateMapper();
         return mapper;
     });

@@ -1,5 +1,4 @@
-﻿
-namespace DAL.Entities;
+﻿namespace DAL.Entities;
 
 /// <summary> Акаунт користувача системи. </summary>
 public class User : IEntity

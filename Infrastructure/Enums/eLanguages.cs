@@ -1,7 +1,7 @@
-﻿
-using Translate;
-using BLL.Attributes;
-namespace BLL.Enums;
+﻿using Infrastructure.Attributes;
+using Infrastructure.Translate;
+
+namespace Infrastructure.Enums;
 
 /// <summary> Перелік мов доступних на сайті. </summary>
 public enum eLanguages
