@@ -4,7 +4,6 @@ using BLL.IoCResolver;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Логування Serilog.
 builder.Services.AddLogging();
 builder.Logging.ClearProviders();
 Log.Logger = new LoggerConfiguration()
@@ -16,10 +15,8 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 builder.Host.UseSerilog();
 
-// Контроллери з представленнями.
 builder.Services.AddControllersWithViews();
 
-// Авторизація та аутентифікація.
 builder.Services.AddAuthentication("Cookies").AddCookie(options =>
 {
     options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
@@ -29,7 +26,6 @@ builder.Services.AddAuthentication("Cookies").AddCookie(options =>
 });
 builder.Services.AddAuthorization();
 
-// Стиснення відповіді.
 builder.Services.AddResponseCompression(options =>
 {
     options.EnableForHttps = true;

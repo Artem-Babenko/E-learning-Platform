@@ -1,4 +1,5 @@
 ﻿
+using DAL.Entities;
 using DAL.Repository;
 using Microsoft.EntityFrameworkCore.Storage;
 
@@ -38,7 +39,7 @@ public class UnitOfWork : IUnitOfWork
     }
 
     /// <summary> Отримання репозиторію сутностей. </summary>
-    IRepository<TEntity> IUnitOfWork.GetRepository<TEntity>()
+    public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class, IEntity
     {
         if (repositories.ContainsKey(typeof(TEntity)))
         {
@@ -47,6 +48,11 @@ public class UnitOfWork : IUnitOfWork
         var repository = new Repository<TEntity>(db);
         repositories.Add(typeof(TEntity), repository);
         return repository;
+    }
+
+    public Lazy<IRepository<TEntity>> GetLazyPepository<TEntity>() where TEntity : class, IEntity
+    {
+        return new Lazy<IRepository<TEntity>>(GetRepository<TEntity>());
     }
 
     protected virtual void Dispose(bool disposing)

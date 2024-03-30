@@ -19,4 +19,6 @@ public interface IUnitOfWork : IDisposable
     
     /// <summary> Отримання репозиторію сутностей. </summary>
     IRepository<TEntity> GetRepository<TEntity>() where TEntity : class, IEntity;
+
+    Lazy<IRepository<TEntity>> GetLazyPepository<TEntity>() where TEntity : class, IEntity;
 }
