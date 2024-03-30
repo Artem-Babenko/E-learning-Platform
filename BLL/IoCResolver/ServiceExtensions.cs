@@ -9,8 +9,10 @@ public static class ServiceExtensions
     /// <summary>
     /// Додавання бізнес сервісів у контейнер впровадження залежностей.
     /// </summary>
-    public static IServiceCollection AddBLLScopedServices(this IServiceCollection serviceCollection)
+    public static IServiceCollection AddBLLScopedServices(this IServiceCollection services)
     {
+        services.AddTransient(typeof(Lazy<>), typeof(Lazier<>));
+
         var assembly = Assembly.GetExecutingAssembly();
         var serviceInterfases = assembly.GetTypes()
             .Where(type => type.GetCustomAttribute<InterfaceForDI>() != null)
@@ -26,12 +28,12 @@ public static class ServiceExtensions
             {
                 foreach(var serviceClass in serviceClasses)
                 {
-                    serviceCollection.AddScoped(serviceInterfase, serviceClass);
+                    services.AddScoped(serviceInterfase, serviceClass);
                 }
             }
         }
 
-        return serviceCollection;
+        return services;
     }
 
     /// <summary>

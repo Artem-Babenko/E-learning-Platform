@@ -25,3 +25,8 @@ header .right {
 header .right div {
   padding: 5px 10px;
 }
+
+nav.main-nav .links {
+  display: flex;
+  flex-direction: column;
+}

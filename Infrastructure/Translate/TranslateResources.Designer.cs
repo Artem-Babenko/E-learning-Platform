@@ -61,6 +61,15 @@ namespace Infrastructure.Translate {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Courses.
+        /// </summary>
+        public static string COURSES {
+            get {
+                return ResourceManager.GetString("COURSES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string ENG {
@@ -79,11 +88,47 @@ namespace Infrastructure.Translate {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Overview.
+        /// </summary>
+        public static string OVERVIEW {
+            get {
+                return ResourceManager.GetString("OVERVIEW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profile.
+        /// </summary>
+        public static string PROFILE {
+            get {
+                return ResourceManager.GetString("PROFILE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Russian.
         /// </summary>
         public static string RU {
             get {
                 return ResourceManager.GetString("RU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tasks.
+        /// </summary>
+        public static string TASKS {
+            get {
+                return ResourceManager.GetString("TASKS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timetable.
+        /// </summary>
+        public static string TIMETABLE {
+            get {
+                return ResourceManager.GetString("TIMETABLE", resourceCulture);
             }
         }
         

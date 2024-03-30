@@ -38,9 +38,8 @@ builder.Services.AddUnitOfWork();
 
 var app = builder.Build();
 
-app.UseStaticFiles(); 
+app.UseStaticFiles();
 app.MapControllers();
-app.UseRouting();
 
 app.UseSerilogRequestLogging();
 app.UseResponseCompression();
@@ -49,4 +48,3 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.Run();
-

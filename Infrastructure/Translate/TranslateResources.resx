@@ -109,4 +109,19 @@
   <data name="ENG" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="OVERVIEW" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="PROFILE" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="TASKS" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="TIMETABLE" xml:space="preserve">
+    <value>Timetable</value>
+  </data>
+  <data name="COURSES" xml:space="preserve">
+    <value>Courses</value>
+  </data>
 </root>

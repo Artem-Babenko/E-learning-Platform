@@ -1,30 +1,44 @@
-﻿using Infrastructure.Enums;
-using Microsoft.AspNetCore.Mvc;
-using System.Globalization;
-using Web.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers;
 
 [Route("")]
-public class EducationalPlatformController : Controller
+[Route("platform")]
+public class EducationalPlatformController : BaseController
 {
-
     [HttpGet]
     [Route("")]
-    public IActionResult Index()
+    [Route("overview")]
+    public IActionResult GetOverviewPage()
     {
-        var layoutModel = new LayoutModel();
+        return View("Overview");
+    }
 
-        string? langFromCookies = HttpContext.Request.Cookies["language"];
-        eLanguages enumLanguage = Enum.Parse<eLanguages>(langFromCookies ?? "UK");
-        string selectedLanguage = enumLanguage.ToString();
+    [HttpGet]
+    [Route("courses")]
+    public IActionResult GetCoursesPage()
+    {
+        return View("Courses");
+    }
 
-        CultureInfo.CurrentCulture = new CultureInfo(selectedLanguage);
-        CultureInfo.CurrentUICulture = new CultureInfo(selectedLanguage);
+    [HttpGet]
+    [Route("profile")]
+    public IActionResult GetProfilePage()
+    {
+        return View("Profile");
+    }
 
-        layoutModel.Language = enumLanguage;
+    [HttpGet]
+    [Route("timetable")]
+    public IActionResult GetTimetablePage()
+    {
+        return View("Timetable");
+    }
 
-        ViewBag.LayoutModel = layoutModel;
-        return View();
+    [HttpGet]
+    [Route("tasks")]
+    public IActionResult GetTasksPage()
+    {
+        return View("Tasks");
     }
 }

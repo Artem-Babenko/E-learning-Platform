@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Web.Controllers;
 
 [Route("users")]
-public class UserController : Controller
+public class UserController : BaseController
 {
     private IUserService userService;
 
