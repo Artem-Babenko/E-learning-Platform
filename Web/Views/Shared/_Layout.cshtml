@@ -13,11 +13,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
+
     <link rel="stylesheet" href="/css/Layout.css" asp-append-version="true" />
-    <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
     @RenderSection("Styles", required: false)
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js"></script>
 </head>
 <body>
 
@@ -29,30 +35,35 @@
         </div>
         <div class="center"></div>
         <div class="right">
-            @Html.DropDownList("languageSelect", languages, new { @class = "site-language-select" });
+            @Html.DropDownList("languageSelect", languages, new { @class = "site-language-select" })
             <p class="user-info">Артем Бабенко</p>
         </div>
     </header>
 
     <nav class="main-nav">
         <div class="links">
-            <a href="@Url.Action(nameof(EducationalPlatformController.GetOverviewPage),nameof(EducationalPlatformController).ToControllerName())">
+            <a href="@Url.Action(nameof(EducationalPlatformController.GetOverviewPage), 
+                    nameof(EducationalPlatformController).ToControllerName())">
                 <i class='fa-solid fa-chart-pie'></i>
                 @TranslateResources.OVERVIEW
             </a>
-            <a href="@Url.Action(nameof(EducationalPlatformController.GetCoursesPage),nameof(EducationalPlatformController).ToControllerName())">
+            <a href="@Url.Action(nameof(EducationalPlatformController.GetCoursesPage), 
+                    nameof(EducationalPlatformController).ToControllerName())">
                 <i class='fa-solid fa-book-open'></i>
                 @TranslateResources.COURSES
             </a>
-            <a href="@Url.Action(nameof(EducationalPlatformController.GetTimetablePage),nameof(EducationalPlatformController).ToControllerName())">
+            <a href="@Url.Action(nameof(EducationalPlatformController.GetTimetablePage),
+                    nameof(EducationalPlatformController).ToControllerName())">
                 <i class='fa-regular fa-calendar'></i>
                 @TranslateResources.TIMETABLE
             </a>
-            <a href="@Url.Action(nameof(EducationalPlatformController.GetTasksPage),nameof(EducationalPlatformController).ToControllerName())">
+            <a href="@Url.Action(nameof(EducationalPlatformController.GetTasksPage), 
+                    nameof(EducationalPlatformController).ToControllerName())">
                 <i class='fa-solid fa-list-check'></i>
                 @TranslateResources.TASKS
             </a>
-            <a href="@Url.Action(nameof(EducationalPlatformController.GetProfilePage),nameof(EducationalPlatformController).ToControllerName())">
+            <a href="@Url.Action(nameof(EducationalPlatformController.GetProfilePage),
+                    nameof(EducationalPlatformController).ToControllerName())">
                 <i class='fa-solid fa-user'></i>
                 @TranslateResources.PROFILE
             </a>
@@ -62,9 +73,6 @@
     <div>
         @RenderBody()
     </div>
-
-    <script src="~/lib/js-cookie/js.cookie.min.js"></script>
-    <script src="~/lib/jquery/jquery.min.js"></script>
 
     <script src="~/js/Layout.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
