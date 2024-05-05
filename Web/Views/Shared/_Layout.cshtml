@@ -9,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
 
-    <link rel="stylesheet" href="/css/Layout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/Layout.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"  />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" />
     @RenderSection("Styles", required: false)
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -34,30 +34,35 @@
 
     <nav class="main-nav">
         <div class="links">
-            <a href="@Url.Action(nameof(EducationalPlatformController.GetOverviewPage), 
-                    nameof(EducationalPlatformController).ToControllerName())">
-                <i class='fa-solid fa-chart-pie'></i>
+            <a asp-action="@nameof(OverviewController.OverviewPage)" 
+                asp-controller="@nameof(OverviewController).ToControllerName()">
+
                 @TranslateResources.OVERVIEW
             </a>
-            <a href="@Url.Action(nameof(EducationalPlatformController.GetCoursesPage), 
-                    nameof(EducationalPlatformController).ToControllerName())">
-                <i class='fa-solid fa-book-open'></i>
-                @TranslateResources.COURSES
+            <a asp-action="@nameof(EducationController.EducationPage)"
+               asp-controller="@nameof(EducationController).ToControllerName()">
+
             </a>
-            <a href="@Url.Action(nameof(EducationalPlatformController.GetTimetablePage),
-                    nameof(EducationalPlatformController).ToControllerName())">
-                <i class='fa-regular fa-calendar'></i>
-                @TranslateResources.TIMETABLE
+            <a asp-action="@nameof(TaskController.TasksPage)"
+               asp-controller="@nameof(TaskController).ToControllerName()">
+
+               @TranslateResources.TASKS
             </a>
-            <a href="@Url.Action(nameof(EducationalPlatformController.GetTasksPage), 
-                    nameof(EducationalPlatformController).ToControllerName())">
-                <i class='fa-solid fa-list-check'></i>
-                @TranslateResources.TASKS
+            <a asp-action="@nameof(CalendarController.CalendarPage)"
+               asp-controller="@nameof(CalendarController).ToControllerName()">
+
             </a>
-            <a href="@Url.Action(nameof(EducationalPlatformController.GetProfilePage),
-                    nameof(EducationalPlatformController).ToControllerName())">
-                <i class='fa-solid fa-user'></i>
-                @TranslateResources.PROFILE
+            <a asp-action="@nameof(ChatController.ChatPage)" 
+                asp-controller="@nameof(ChatController).ToControllerName()">
+
+            </a>
+            <a asp-action="@nameof(LibruaryController.LibruaryPage)"
+               asp-controller="@nameof(LibruaryController).ToControllerName()">
+
+            </a>
+            <a asp-action="@nameof(CabinetController.CabinetPage)"
+               asp-controller="@nameof(CabinetController).ToControllerName()">
+
             </a>
         </div>
     </nav>

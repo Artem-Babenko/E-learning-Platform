@@ -3,18 +3,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers;
 
-[Route("users")]
-public class UserController : BaseController
+public class CabinetController : BaseController
 {
     private IUserService userService;
 
-    public UserController(IUserService userService)
+    public CabinetController(IUserService userService)
     {
         this.userService = userService;
     }
 
     [HttpGet]
-    [Route("")]
+    [Route("cabinet")]
+    public IActionResult CabinetPage()
+    {
+        return View("Platform/Cabinet");
+    }
+
     public async Task<IActionResult> GetUsers()
     {
         var users = await userService.GetUsersList();

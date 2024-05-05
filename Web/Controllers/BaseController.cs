@@ -16,6 +16,14 @@ public abstract class BaseController : Controller
 
         var layoutModel = new LayoutModel();
 
+        FillLanguage(layoutModel);
+
+        ViewBag.LayoutModel = layoutModel;
+        LayoutModel = layoutModel;
+    }
+
+    private void FillLanguage(LayoutModel layoutModel)
+    {
         string? langFromCookies = HttpContext.Request.Cookies["language"];
         eLanguages enumLanguage = Enum.Parse<eLanguages>(langFromCookies ?? "UK");
         string selectedLanguage = enumLanguage.ToString();
@@ -24,8 +32,5 @@ public abstract class BaseController : Controller
         CultureInfo.CurrentUICulture = new CultureInfo(selectedLanguage);
 
         layoutModel.Language = enumLanguage;
-
-        ViewBag.LayoutModel = layoutModel;
-        LayoutModel = layoutModel;
     }
 }
