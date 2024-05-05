@@ -1,13 +1,5 @@
 ﻿@{
     var layoutModel = (LayoutModel)ViewBag.LayoutModel;
-
-    var languages = Enum.GetValues<eLanguages>()
-        .Cast<eLanguages>()
-        .Select(language => new SelectListItem() {
-            Text = language.GetDescription(),
-            Value = language.ToString(),
-            Selected = language == layoutModel.Language
-        });
 }
 
 <!DOCTYPE html>
@@ -35,7 +27,7 @@
         </div>
         <div class="center"></div>
         <div class="right">
-            @Html.DropDownList("languageSelect", languages, new { @class = "site-language-select" })
+            @Html.LanguageSelectList(layoutModel.Language)
             <p class="user-info">Артем Бабенко</p>
         </div>
     </header>
