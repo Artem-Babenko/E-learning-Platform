@@ -18,22 +18,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js"></script>
 </head>
 <body>
-
-    <header>
-        <div class="left">
-            <a class="site-name" href="#">Cite name</a>
-        </div>
-        <div class="center"></div>
-        <div class="right">
-            @Html.LanguageSelectList(layoutModel.Language)
-            <p class="user-info">Артем Бабенко</p>
-        </div>
-    </header>
-
-    <nav class="main-nav">
-        <div class="links">
-            <a asp-action="@nameof(OverviewController.OverviewPage)" 
-                asp-controller="@nameof(OverviewController).ToControllerName()">
+    <section class="left-section">
+        <a class="site-name" href="#">Cite name</a>
+        <nav class="links">
+            <a asp-action="@nameof(OverviewController.OverviewPage)"
+               asp-controller="@nameof(OverviewController).ToControllerName()">
                 <i class="ri-apps-line"></i>
                 @TranslateResources.OVERVIEW
             </a>
@@ -52,8 +41,8 @@
                 <i class="ri-calendar-line"></i>
                 @TranslateResources.CALENDAR
             </a>
-            <a asp-action="@nameof(ChatController.ChatPage)" 
-                asp-controller="@nameof(ChatController).ToControllerName()">
+            <a asp-action="@nameof(ChatController.ChatPage)"
+               asp-controller="@nameof(ChatController).ToControllerName()">
                 <i class="ri-message-2-line"></i>
                 @TranslateResources.CHAT
             </a>
@@ -67,12 +56,19 @@
                 <i class="ri-id-card-line"></i>
                 @TranslateResources.CABINET
             </a>
-        </div>
-    </nav>
+        </nav>
+    </section>
 
-    <div>
-        @RenderBody()
-    </div>
+    <section class="right-section">
+        <header class="main-header">
+            <h3 class="page-name">@ViewBag.Title</h3>
+            @Html.LanguageSelectList(layoutModel.Language)
+        </header>
+
+        <main class="main-section">
+            @RenderBody()
+        </main>
+    </section>
 
     <script src="~/js/Layout.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)

@@ -8,42 +8,65 @@
     font-family: 'Roboto', sans-serif;
 }
 
-header{
-    padding: 10px 20px;
+body {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background-color: #ccc;
+    height: 100vh;
 
-    .left{
-        a.site-name{
+    .left-section {
+        width: 250px;
+        background-color: #fff;
+
+        .site-name {
+            display: block;
             text-decoration: none;
-            color: black;
+            color: #000;
+            text-align: center;
             font-size: 25px;
-            font-weight: 500;
+            font-weight: 600;
+            margin: 20px 0 15px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            gap: 5px;
+
+            a {
+                font-size: 17px;
+                font-weight: 400;
+                display: block;
+                text-decoration: none;
+                color: #000;
+                display: flex;
+                align-items: center;
+                padding: 10px 20px;
+                gap: 10px;
+
+                i{
+                    font-size: 21px;
+                    min-width: 25px;
+                    min-height: 25px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
         }
     }
 
-    .center{
+    .right-section {
+        width: calc(100% - 250px);
 
-    }
-
-    .right{
-        display: flex;
-        gap: 15px;
-        div{
-            padding: 5px 10px;
+        .main-header {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            margin: 20px;
         }
-    }
-}
 
-nav.main-nav{
-
-    .links{
-        display: flex;
-        flex-direction: column;
-
-        a{
-
+        .main-section {
         }
     }
 }
