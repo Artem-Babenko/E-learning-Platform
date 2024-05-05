@@ -8,6 +8,6 @@ public class CalendarController : BaseController
     [Route("calendar")]
     public IActionResult CalendarPage()
     {
-        return View("Platform/Calendar");
+        return View("Views/Platform/Calendar.cshtml");
     }
 }

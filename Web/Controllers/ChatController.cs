@@ -8,6 +8,6 @@ public class ChatController : BaseController
     [Route("chat")]
     public IActionResult ChatPage()
     {
-        return View("Platform/Chat");
+        return View("Views/Platform/Chat.cshtml");
     }
 }

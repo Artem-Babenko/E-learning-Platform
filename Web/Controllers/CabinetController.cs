@@ -16,7 +16,7 @@ public class CabinetController : BaseController
     [Route("cabinet")]
     public IActionResult CabinetPage()
     {
-        return View("Platform/Cabinet");
+        return View("Views/Platform/Cabinet.cshtml");
     }
 
     public async Task<IActionResult> GetUsers()

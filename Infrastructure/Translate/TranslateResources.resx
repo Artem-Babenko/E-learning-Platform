@@ -97,9 +97,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="NAME" xml:space="preserve">
-    <value>Name</value>
-  </data>
   <data name="UA" xml:space="preserve">
     <value>Ukrainian</value>
   </data>
@@ -112,16 +109,22 @@
   <data name="OVERVIEW" xml:space="preserve">
     <value>Overview</value>
   </data>
-  <data name="PROFILE" xml:space="preserve">
-    <value>Profile</value>
-  </data>
   <data name="TASKS" xml:space="preserve">
     <value>Tasks</value>
   </data>
-  <data name="TIMETABLE" xml:space="preserve">
-    <value>Timetable</value>
+  <data name="EDUCATION" xml:space="preserve">
+    <value>Education</value>
   </data>
-  <data name="COURSES" xml:space="preserve">
-    <value>Courses</value>
+  <data name="CHAT" xml:space="preserve">
+    <value>Chat</value>
+  </data>
+  <data name="LIBRUARY" xml:space="preserve">
+    <value>Libruary</value>
+  </data>
+  <data name="CABINET" xml:space="preserve">
+    <value>Cabinet</value>
+  </data>
+  <data name="CALENDAR" xml:space="preserve">
+    <value>Calendar</value>
   </data>
 </root>

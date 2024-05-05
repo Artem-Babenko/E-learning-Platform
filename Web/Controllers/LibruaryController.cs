@@ -8,6 +8,6 @@ public class LibruaryController : BaseController
     [Route("libruary")]
     public IActionResult LibruaryPage()
     {
-        return View("Platform/Libruary");
+        return View("Views/Platform/Libruary.cshtml");
     }
 }

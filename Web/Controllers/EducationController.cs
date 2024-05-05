@@ -8,6 +8,6 @@ public class EducationController : BaseController
     [Route("education")]
     public IActionResult EducationPage()
     {
-        return View("Platform/Education");
+        return View("Views/Platform/Education.cshtml");
     }
 }

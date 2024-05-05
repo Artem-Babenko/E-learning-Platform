@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="NAME" xml:space="preserve">
-    <value>Имя</value>
-  </data>
   <data name="UA" xml:space="preserve">
     <value>Украинский</value>
   </data>
@@ -132,16 +129,22 @@
   <data name="OVERVIEW" xml:space="preserve">
     <value>Обзор</value>
   </data>
-  <data name="PROFILE" xml:space="preserve">
-    <value>Профиль</value>
-  </data>
   <data name="TASKS" xml:space="preserve">
     <value>Задания</value>
   </data>
-  <data name="TIMETABLE" xml:space="preserve">
-    <value>Расписание</value>
+  <data name="EDUCATION" xml:space="preserve">
+    <value>Обучение</value>
   </data>
-  <data name="COURSES" xml:space="preserve">
-    <value>Курсы</value>
+  <data name="CHAT" xml:space="preserve">
+    <value>Чат</value>
+  </data>
+  <data name="LIBRUARY" xml:space="preserve">
+    <value>Библиотека</value>
+  </data>
+  <data name="CABINET" xml:space="preserve">
+    <value>Кабинет</value>
+  </data>
+  <data name="CALENDAR" xml:space="preserve">
+    <value>Календарь</value>
   </data>
 </root>

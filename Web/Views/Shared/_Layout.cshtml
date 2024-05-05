@@ -21,9 +21,7 @@
 
     <header>
         <div class="left">
-            <a class="site-name" href="#">
-                Е-навчання
-            </a>
+            <a class="site-name" href="#">Cite name</a>
         </div>
         <div class="center"></div>
         <div class="right">
@@ -36,33 +34,38 @@
         <div class="links">
             <a asp-action="@nameof(OverviewController.OverviewPage)" 
                 asp-controller="@nameof(OverviewController).ToControllerName()">
-
+                <i class="ri-apps-line"></i>
                 @TranslateResources.OVERVIEW
             </a>
             <a asp-action="@nameof(EducationController.EducationPage)"
                asp-controller="@nameof(EducationController).ToControllerName()">
-
+                <i class="ri-graduation-cap-line"></i>
+                @TranslateResources.EDUCATION
             </a>
             <a asp-action="@nameof(TaskController.TasksPage)"
                asp-controller="@nameof(TaskController).ToControllerName()">
-
-               @TranslateResources.TASKS
+                <i class="ri-list-check-3"></i>
+                @TranslateResources.TASKS
             </a>
             <a asp-action="@nameof(CalendarController.CalendarPage)"
                asp-controller="@nameof(CalendarController).ToControllerName()">
-
+                <i class="ri-calendar-line"></i>
+                @TranslateResources.CALENDAR
             </a>
             <a asp-action="@nameof(ChatController.ChatPage)" 
                 asp-controller="@nameof(ChatController).ToControllerName()">
-
+                <i class="ri-message-2-line"></i>
+                @TranslateResources.CHAT
             </a>
             <a asp-action="@nameof(LibruaryController.LibruaryPage)"
                asp-controller="@nameof(LibruaryController).ToControllerName()">
-
+                <i class="ri-book-2-line"></i>
+                @TranslateResources.LIBRUARY
             </a>
             <a asp-action="@nameof(CabinetController.CabinetPage)"
                asp-controller="@nameof(CabinetController).ToControllerName()">
-
+                <i class="ri-id-card-line"></i>
+                @TranslateResources.CABINET
             </a>
         </div>
     </nav>

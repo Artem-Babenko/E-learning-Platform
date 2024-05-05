@@ -8,6 +8,6 @@ public class TaskController : BaseController
     [Route("tasks")]
     public IActionResult TasksPage()
     {
-        return View("Platform/Tasks");
+        return View("Views/Platform/Tasks.cshtml");
     }
 }
