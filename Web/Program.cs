@@ -1,6 +1,7 @@
 using Serilog;
 using Microsoft.AspNetCore.ResponseCompression;
 using BLL.IoCResolver;
+using Web.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +38,8 @@ builder.Services.AddBLLScopedServices();
 builder.Services.AddUnitOfWork();
 
 var app = builder.Build();
+
+app.UseMiddleware<ErrorHandlerMiddleware>();
 
 app.UseStaticFiles();
 app.MapControllers();
