@@ -1,11 +1,11 @@
 using Serilog;
-using Microsoft.AspNetCore.ResponseCompression;
 using BLL.IoCResolver;
 using Web.Middleware;
+//using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddLogging();
+//builder.Services.AddLogging();
 builder.Logging.ClearProviders();
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
@@ -14,7 +14,7 @@ Log.Logger = new LoggerConfiguration()
         outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{NewLine}{Exception}",
         rollingInterval: RollingInterval.Day)
     .CreateLogger();
-builder.Host.UseSerilog();
+//builder.Host.UseSerilog();
 
 builder.Services.AddControllersWithViews();
 
@@ -27,12 +27,12 @@ builder.Services.AddAuthentication("Cookies").AddCookie(options =>
 });
 builder.Services.AddAuthorization();
 
-builder.Services.AddResponseCompression(options =>
-{
-    options.EnableForHttps = true;
-    options.Providers.Add<GzipCompressionProvider>();
-    options.Providers.Add<BrotliCompressionProvider>();
-});
+//builder.Services.AddResponseCompression(options =>
+//{
+//    options.EnableForHttps = true;
+//    options.Providers.Add<GzipCompressionProvider>();
+//    options.Providers.Add<BrotliCompressionProvider>();
+//});
 
 builder.Services.AddBLLScopedServices();
 builder.Services.AddUnitOfWork();
@@ -40,12 +40,13 @@ builder.Services.AddUnitOfWork();
 var app = builder.Build();
 
 app.UseMiddleware<ErrorHandlerMiddleware>();
+app.UseMiddleware<LogRequestMiddleware>();
 
 app.UseStaticFiles();
 app.MapControllers();
 
-app.UseSerilogRequestLogging();
-app.UseResponseCompression();
+//app.UseSerilogRequestLogging();
+//app.UseResponseCompression();
 
 app.UseAuthentication();
 app.UseAuthorization();

@@ -1,4 +1,6 @@
-﻿namespace Web.Middleware;
+﻿using Serilog;
+
+namespace Web.Middleware;
 
 internal class ErrorHandlerMiddleware 
 {
@@ -17,6 +19,7 @@ internal class ErrorHandlerMiddleware
         }
         catch (Exception ex)
         {
+            Log.Error($"{ex.Message} | {ex.StackTrace}");
             await context.Response.WriteAsync($"Error: {ex.Message}");
         }
     }

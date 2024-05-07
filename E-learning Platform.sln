@@ -21,8 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{6
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{0995A5F9-EF4E-489F-BB9E-F99C63D5250B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C890DBE8-7252-438E-995B-781857C4963A} = {C890DBE8-7252-438E-995B-781857C4963A}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{C890DBE8-7252-438E-995B-781857C4963A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{C890DBE8-7252-438E-995B-781857C4963A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
